@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Confirm Your phone</h1>
+        <p>Let's keep your account secure</p>
+
+        <form>
+            <p>Phone number</p>
+            <input id="phone" type="text" name="phone" placeholder="Enter your phone number"/>
+            <button id="send">Send</button>
+        </form>
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#send').click((e) => {
+            e.preventDefault();
+            let phone = $('#phone').val();
+            $.post('http://localhost:7000/submitNumber', {phone: phone})
+
+        })
+    </script>
+</html>
